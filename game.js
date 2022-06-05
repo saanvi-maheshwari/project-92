@@ -2,13 +2,13 @@ get_p1 = localStorage.getItem("Player_1");
 get_p2 = localStorage.getItem("Player_2");
 
 score1 = 0;
-score2 = 0;
+score2 = 0;  
 
 document.getElementById("p1_score").innerHTML = score1;
 document.getElementById("p2_score").innerHTML = score2;
 
-document.getElementById("p1_name").innerHTML = get_p1;
-document.getElementById("p2_name").innerHTML = get_p2;
+document.getElementById("p1_name").innerHTML = get_p1 + " : ";
+document.getElementById("p2_name").innerHTML = get_p2 + " : ";
 
 document.getElementById("QT").innerHTML = "Question Turn - " + get_p1;
 document.getElementById("AT").innerHTML = "Answer Turn - " + get_p2;
@@ -28,17 +28,20 @@ function send(){
     document.getElementById("number2").value = "";
 } 
 
+
 function check(){
-get_answer = document.getElementById("input_box").value;
+question_turn = "player1";
+answer_turn = "player2";
+get_answer = document.getElementById("input_check_box").value;
 if(get_answer==actual_answer)
 {
 if(answer_turn=="player1"){
-update_player_1_score = player1_score+1;
-document.getElementById("p1_score").innerHTML = update_player1_score;
+score1 = score1+1;
+document.getElementById("player1_score").innerHTML = update_player1_score;
 }
 else{
- update_player_2_score = player2_score+1;
-    document.getElementById("p2_score").innerHTML = update_player2_score;
+    score2 = score2+1;
+    document.getElementById("player2_score").innerHTML = update_player2_score;
 }
 }
 }
